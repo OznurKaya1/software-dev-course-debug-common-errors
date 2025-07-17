@@ -26,7 +26,12 @@ Think about which debugging methods you found most useful and how you might appl
 
 console.log("Welcome to the bootcamp
 
-// What’s Wrong?
+// What’s Wrong? 
+It is a syntax error. Missing a closing quote and alsa paranthesis on the console.log()
+
+let text = "Welcome to the bootcamp";
+console.log("Welcome to the bootcamp")
+//"Welcome to the bootcamp"
 
 
 // Program B
@@ -39,8 +44,15 @@ for (let i = 0; i < numbers.length; i++) {
   console.log(doubled);
 }
 
-// What’s Wrong?
+// What’s Wrong? 
+It is a runtime error. The array contains a string "eight" which can't be multiplied like a number.
 
+let numbers = [2,4,8];
+for (let i = 0; i < numbers.length; i++) {
+  let doubled = numbers[1] * 2;
+  console.log(doubled);
+}
+//4,8,16
 
 
 // Program C (Logic Error)
@@ -60,3 +72,19 @@ function isPrime(num) {
 console.log(isPrime(7)); // Expected true but gets false
 
 // What’s Wrong?
+if num % i === 0 , means num is divisible by i, so it can't be prime number but it returns true.
+
+function isPrime(num) {
+  if (num < 2) return false; 
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false; 
+    }
+  }
+  return true; 
+}
+
+console.log(isPrime(7)); // true
+console.log(isPrime(4)); // false
+
+
